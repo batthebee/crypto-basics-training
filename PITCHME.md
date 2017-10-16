@@ -5,8 +5,8 @@ Krypto-Basics und wie man es NICHT macht
 
 ---
 
-Auszug aus Präsentation von Linus Neumann ( Sprecher CCC) zur 
-Austellungseröffnung „Wahlcomputer“ im Heinz-Nixdorf-Forum 2017[Heinz-Nixdorf-Forum 2017](http://www.linus-neumann.de/wp-content/uploads/2017/09/Mit-Papier-und-Bleistift-zur-sicheren-Wahl.mp4)
+[Auszug aus Präsentation von Linus Neumann ( Sprecher CCC) zur 
+Austellungseröffnung „Wahlcomputer“ im Heinz-Nixdorf-Forum 2017](http://www.linus-neumann.de/wp-content/uploads/2017/09/Mit-Papier-und-Bleistift-zur-sicheren-Wahl.mp4)
 
 
 --- 
@@ -63,7 +63,7 @@ Urteil
 
 ---
 
-![the-evil-queen](evil/dr-evil.jpg "Rule 1")
+![dr-evil](evil/dr-evil.jpeg "Rule 1")
 
 ** Rule 1: Computers are evil! **
 
@@ -121,9 +121,9 @@ How to hack the upcoming Dutch elections – and how hackers could have hacked a
 24. High: Most sensitive operations in voting software have least SHA1 protection.
 25. Etc. etc.
 ```
-@[1]
 @[4-9]
 @[22-24]
+@[1]
 
 
 --- 
@@ -315,8 +315,8 @@ Zum Austausch von Wahlergebnissen
 * Entschlüsselung durch pc-wahl-software
 
 IP: 172.22.5.30
-▪ Benutzername: wahlen
-▪ Passwort: wahlen,ftp
+* Benutzername: wahlen
+* Passwort: wahlen,ftp
 
 ---
 
@@ -344,12 +344,11 @@ CCC informiert ekom21 über weitere CPR-Dateien
 
 geplante Aktionen: 
 
-* statt FTP soll SFTP zum Einsatz kommen -> Entschlüsselung immer noch möglich
+* statt FTP soll SFTP zum Einsatz kommen (Entschlüsselung immer noch möglich)
 * statt einem globalen Benutzer, ein Benutzer pro Wahlkreis
 
 ---
-
-6. September 2017
+*6. September 2017*
 
 * Umzug von http://wahlinfo.ekom21.de nach Umzug von https://wahlinfo.ekom21.de/wahlen
 * FTP-Modul wird wieder öffentlich Bereitgestellt 
@@ -459,9 +458,7 @@ Ab hier keine weiteren Überprüfungen durch ccc möglich.
 
 ## Integrität der Software
 
----
-
-* keine Prüfung der Authentizität 
+keine Prüfung der Authentizität 
 
 ---
 
@@ -469,7 +466,7 @@ Erster Behebungsversuch: MD5-Prüfsummen (31. August 2017)
 
 ---
 
-* Im zip-archiv befindet sich jetzt eine MD5-Prüfsummen-Datei
+Im zip-archiv befindet sich jetzt eine MD5-Prüfsummen-Datei
 
 ---
 
@@ -560,9 +557,9 @@ GPG-Passphrase wird mangelhaft „verschlüsselt“ gespeichert
 
 ---
 
-![trump](evil/donald-trump.jpg "Rule 8")
-
 ** Rule 8:  using "Handmade" crypto-alogrithm is very, very evil!**
+
+![trump](evil/donald-trump.jpg "Rule 8")
 
 ---
 
