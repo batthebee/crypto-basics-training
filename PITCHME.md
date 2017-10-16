@@ -1,6 +1,5 @@
 
-Das PC-Wahl Desaster  
-=====================
+# Das PC-Wahl Desaster  
 
 Krypto-Basics und wie man es NICHT macht
 
@@ -61,18 +60,17 @@ Urteil
 
 ---
 
->> Beim Einsatz elektronischer Wahlgeräte müssen die wesentlichen Schritte der Wahlbehandlung und Ergebnisermittlung von Bürgern zuverlässig und ohne Sachkenntnis überprüft werden können. <<
+> Beim Einsatz elektronischer Wahlgeräte müssen die wesentlichen Schritte der Wahlbehandlung und Ergebnisermittlung von Bürgern zuverlässig und ohne Sachkenntnis überprüft werden können.
 
 ---
 
-![the-evil-queen](evil/the-evil-queen.jpg "Rule 1")
+![the-evil-queen](evil/dr-evil.jpg "Rule 1")
 
 ** Rule 1: Computers are evil! **
 
 ---
 
-Was ist PC-Wahl?
-=================
+# PC-Wahl
 
 Software zur Organisation, Wahlerfassung und -auswertung von Wahlen. 
 
@@ -85,12 +83,9 @@ Alternative, ebenfalls in Deutschland eingesetzte Software-Produkte sind:
 
 --- 
 
-IVU.elect
------------
+## IVU.elect
 
-* getested im Januar 2017 von Sijmen Ruwhof 
-
-https://sijmen.ruwhof.net/weblog/1166-how-to-hack-the-upcoming-dutch-elections
+getested im Januar 2017 von [Sijmen Ruwhof](https://sijmen.ruwhof.net/weblog/1166-how-to-hack-the-upcoming-dutch-elections)
 
 ---
 
@@ -98,9 +93,9 @@ How to hack the upcoming Dutch elections – and how hackers could have hacked a
 
 ---
 
-Overview of all identified risk
----------------------------------
+### Overview of all identified risk
 
+```
 1. Critical: Optional final paper audit.
 2. Very low: Eight internal network shares (from an internal server called Amsterdam) are visible in a YouTube video
 3. Medium: The voting-software initial installs a web server on the user’s computer. Users have to open a web browser before they can use the voting-software.
@@ -126,12 +121,16 @@ Overview of all identified risk
 23. High: Voting results are sent via an unencrypted e-mail over the internet.
 24. High: Most sensitive operations in voting software have least SHA1 protection.
 25. Etc. etc.
+```
+@[1]
+@[4-9]
+@[22-24]
+
 
 --- 
 
-Bundestagswahl 24. September 2017
-=================================== 
-
+# Bundestagswahl 24. September 2017
+ 
 ---
 
 Vote IT zu Einsatz der Software PC-Wahl: 
@@ -145,8 +144,8 @@ Bundestagswahlen, Europawahlen und Volksabstimmungen eingesetzt.“
 
 ---
 
-Security by Obscurity 
-----------------------
+## Security by Obscurity 
+
 
 ---
 
@@ -157,7 +156,6 @@ Security by Obscurity
 ---
 
 07.September 2017 
-==================
 
 Erstveröffentlichung PC-Wahl-Bericht durch CCC
 
@@ -165,8 +163,8 @@ https://ccc.de/system/uploads/230/original/PC-Wahl_Bericht_CCC.pdf
 
 ---
 
-Upload modifizierter Wahlergebnisse
---------------------------------------
+## Upload modifizierter Wahlergebnisse
+
 
 ---
 
@@ -177,8 +175,8 @@ Upload modifizierter Wahlergebnisse
 
 ---
 
-Manipulation der Software
---------------------------
+## Manipulation der Software
+
 
 ---
 
@@ -187,26 +185,25 @@ Manipulation der Software
 
 ---
 
-Upload modifizierter Ergebnisse an statistische Landesämter
--------------------------------------------------------------
+## Upload modifizierter Ergebnisse
+
 
 * Übermittlung per XML
 * innerhalb von zwei Minuten automatisiert veröffentlicht
 
 ---
 
-Schwachstellen
-===============
+# Schwachstellen
 
 ---
 
-Server wahlauswertung.de des Herstellers von PC-Wahl
------------------------------------------------------
+## Server wahlauswertung.de des Herstellers von PC-Wahl
+
 
 ---
 
-Hosting auf Fremdsystem
-------------------------
+### Hosting auf Fremdsystem
+
 
 * 1&1 Shared Host
 * 5.507 weitere Kunden
@@ -219,8 +216,7 @@ Hosting auf Fremdsystem
 
 ---
 
-Extraktion nicht öffentlicher Datein 
-------------------------------------
+### Extraktion nicht öffentlicher Datein 
 
 ---
 
@@ -232,8 +228,7 @@ http://www.wahlauswertung.de/phptest/pobs.php
 
 ---
 
-Schreiben beliebiger Dateien in das Webroot
-------------------------------------------
+### Schreiben beliebiger Dateien in das Webroot
 
 ---
 
@@ -255,8 +250,7 @@ weitere php-scripte
 
 ---
 
-Mangelhaft gesicherter WebDAV-Zugang
--------------------------------------
+### Mangelhaft gesicherter WebDAV-Zugang
 
 ---
 
@@ -265,8 +259,7 @@ Mangelhaft gesicherter WebDAV-Zugang
 
 ---
 
-Mangelhaft gesicherter FTP-Zugang
-----------------------------------
+### Mangelhaft gesicherter FTP-Zugang
 
 ---
 
@@ -294,23 +287,22 @@ weitere Überprüfungen dadurch nicht mehr möglich.
 
 ---
 
-FTP-Server des IT-Dienstleisters ekom21
-----------------------------------------
+## FTP-Server des IT-Dienstleisters ekom21
 
-* Zum Austausch von Wahlergebnissen
+Zum Austausch von Wahlergebnissen
 
 ---
 
-Vpn-Zugang zum Intranet
------------------------
+# Vpn-Zugang zum Intranet
+
 
 * Zugriff vieler, auch privater Firmen
 * Zugangsdaten wie z.B. Nutzer: test, Passwort: test
 
 ---
 
-Unzureichend gesicherter FTP-Server
------------------------------------
+# Unzureichend gesicherter FTP-Server
+
 
 * Zugriff aller Wahlleiter 
 * Veröffentlichung der Passwörter auf öffentlicher Website
@@ -365,8 +357,7 @@ geplante Aktionen:
 
 ---
 
-Kerckhoffs’ Prinzip
----------------------
+# Kerckhoffs’ Prinzip
 
 ---
 
@@ -381,8 +372,7 @@ nicht jedoch auf der Geheimhaltung des Verschlüsselungsalgorithmus beruhen soll
 
 ---
 
-Theorie
-==========
+# Theorie
 
 ---
 
@@ -444,8 +434,7 @@ certificate authority
 
 ---
 
-Unsicher gespeicherte und übertragene Passwörter
--------------------------------------------------
+## Unsicher gespeicherte und übertragene Passwörter
 
 ---
 
@@ -469,8 +458,7 @@ Ab hier keine weiteren Überprüfungen durch ccc möglich.
 
 ---
 
-Integrität der Software
------------------------
+## Integrität der Software
 
 ---
 
@@ -519,8 +507,7 @@ CCC empfiehlt:
 
 ---
 
-Authentizität übertragener Daten
----------------------------------
+## Authentizität übertragener Daten
 
 ---
 
@@ -594,8 +581,7 @@ https://github.com/devio/Walruss
 
 ---
 
-Wie gehts jetzt "richtig"?
-============================
+# Wie gehts jetzt "richtig"?
 
 Spende des CCCs: 
 
@@ -603,7 +589,7 @@ https://github.com/devio/Walruss/tree/master/pcw_rsa_donation
 
 ---
 
-Daten signieren und überprüfen
+## Daten signieren und überprüfen
 
 ---
 
@@ -690,6 +676,10 @@ public static bool Verify(String xml_public_key, String input_file)
 
 ---
 
+## Validieren der Installationsdatei
+
+---
+
 ```csharp
 
 using System.Security;
@@ -753,6 +743,9 @@ static void Main(string[] args)
         return;
     }
 }
-
 ```
+@[2]
+@[24-28]
+@[40-56]
+
 ---
