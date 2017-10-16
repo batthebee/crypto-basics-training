@@ -1,8 +1,8 @@
 
-Das PC-Wahl Desaster - Krypto-Basics und wie man es NICHT macht 
-===============================================================
+Das PC-Wahl Desaster  
+=====================
 
-Florian Schimmer - Senior Dev bei der conplement AG 
+Krypto-Basics und wie man es NICHT macht
 
 ---
 
@@ -58,13 +58,16 @@ Urteil
 * Wahl soll nachvollziehbar & begreifbar sein, nicht nur für Techniker, sonder 
   für jeden Bürger
 
-* >> Beim Einsatz elektronischer Wahlgeräte müssen die wesentlichen Schritte der Wahlbehandlung und Ergebnisermittlung von Bürgern zuverlässig und ohne Sachkenntnis überprüft werden können. <<
+
+---
+
+>> Beim Einsatz elektronischer Wahlgeräte müssen die wesentlichen Schritte der Wahlbehandlung und Ergebnisermittlung von Bürgern zuverlässig und ohne Sachkenntnis überprüft werden können. <<
 
 ---
 
 ![the-evil-queen](evil/the-evil-queen.jpg "Rule 1")
 
-Rule 1: Voting Machines are evil! 
+Rule 1: Computers are evil! 
 
 ---
 
@@ -138,7 +141,7 @@ Bundestagswahlen, Europawahlen und Volksabstimmungen eingesetzt.“
 
 ---
 
-![datenuebermittlung](data/datenuebermittlung.svg "Datenübermittlung")
+![datenuebermittlung](data/datenuebermittlung.jpg "Datenübermittlung")
 
 ---
 
@@ -162,8 +165,43 @@ https://ccc.de/system/uploads/230/original/PC-Wahl_Bericht_CCC.pdf
 
 ---
 
-Infrastruktur
-================
+Upload modifizierter Wahlergebnisse
+--------------------------------------
+
+---
+
+* internes VPN Netzwerk
+* Upload auf FTP-Server
+* FTP-Zugang Passwort-geschützt 
+
+
+---
+
+Manipulation der Software
+--------------------------
+
+---
+
+* Automatische Update Funktion
+* Update-Funktion auf allen Systemen gleich
+
+----
+
+Upload modifizierter Ergebnisse an statistische Landesämter
+-------------------------------------------------------------
+
+* Übermittlung per XML
+* innerhalb von zwei Minuten automatisiert veröffentlicht
+
+
+---
+
+TODO: Overview
+
+---
+
+Schwachstellen
+===============
 
 ---
 
@@ -175,22 +213,55 @@ Hosting auf Fremdsystem
 
 ---
 
-![cobra-kai](evil/cobra-kai.jpg "Rule 3")
+![cobra-kai](evil/cobra-kai.jpeg "Rule 3")
 
 Rule 3: Not knowing your infrastructure is evil!
 
 ---
 
-Server Infrastruktur
-======================
+Extraktion nicht öffentlicher Datein 
+------------------------------------
 
-*  
+---
+
+http://www.wahlauswertung.de/phptest/pobs.php
+
+* ausführbar 
+* Parameter: Quell- und Zielverzeichnis 
+
+-> extraktion beliebiger nicht öffentlicher Daten
+
+---
+
+Schreiben beliebiger Dateien in das Webroot
+------------------------------------------
+
+---
+
+weitere php-scripte 
+
+* ausführbar 
+* upload-funktion 
+* passwortgeschützt: 
+  * user: gast, password: test
+  * user: test01, password: test01
+  * user: test02, password: test02
+  * user: gast, password: test
+  * user: p8346897, password: ftppcw7
+
+---
+
+![darth-vader](evil/darth-vader.jpg "Rule 4")
+
+Rule 4: Testcode in production is evil!
+----------------------------------------
+
+---
+
+-> 
 
 
-
-
-
-
+---
 
 Wie gehts "richtig"?
 =====================
