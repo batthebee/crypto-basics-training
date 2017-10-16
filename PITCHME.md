@@ -63,7 +63,7 @@ Urteil
 
 ---
 
-![dr-evil](evil/dr-evil.jpeg "Rule 1")
+![skeletor](evil/skeletor.jpeg "Rule 1")
 
 ** Rule 1: Computers are evil! **
 
