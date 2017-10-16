@@ -205,6 +205,11 @@ Schwachstellen
 
 ---
 
+Server wahlauswertung.de des Herstellers von PC-Wahl
+-----------------------------------------------------
+
+---
+
 Hosting auf Fremdsystem
 ------------------------
 
@@ -228,8 +233,7 @@ http://www.wahlauswertung.de/phptest/pobs.php
 
 * ausführbar 
 * Parameter: Quell- und Zielverzeichnis 
-
--> extraktion beliebiger nicht öffentlicher Daten
+* beliebig ausführbar
 
 ---
 
@@ -242,23 +246,63 @@ weitere php-scripte
 
 * ausführbar 
 * upload-funktion 
-* passwortgeschützt: 
+* passwort-geschützt: 
   * user: gast, password: test
   * user: test01, password: test01
   * user: test02, password: test02
   * user: gast, password: test
-  * user: p8346897, password: ftppcw7
 
 ---
 
 ![darth-vader](evil/darth-vader.jpg "Rule 4")
 
-Rule 4: Testcode in production is evil!
-----------------------------------------
+** Rule 4: Testcode in production is evil! ** 
 
 ---
 
--> 
+Mangelhaft gesicherter WebDAV-Zugang
+-------------------------------------
+
+---
+
+* www-Benutzer kann Zugangsdaten des Webroots erreichen
+* kompletter Zugang zum System 
+
+---
+
+Mangelhaft gesicherter FTP-Zugang
+----------------------------------
+
+---
+
+https://www.wahlinfo.de/test/test.zip
+
+
+* Entschlüsselungsroutine in SmartEditor.exe
+* Klartext-Zugangsdaten in entschlüsselten zip
+* Benutzername: p8346897
+  Passwort: ftppcw7
+
+---
+
+![blob](evil/The-Blob.jpg "Rule 5")
+
+** Rule 5: Identify and Protect your sensitive Data, otherwise you are evil! **
+
+---
+
+CCC informiert PC-Wahl team
+
+Abgeleitete Aktionen: 
+
+* Dateien mit Endung php werden nicht mehr ausgeführt
+* php-scripte nach wie vor auf Server
+* ftp-Zugangsdaten wurden geändert 
+
+weitere Überprüfungen dadurch nicht mehr möglich. 
+
+---
+
 
 
 ---
