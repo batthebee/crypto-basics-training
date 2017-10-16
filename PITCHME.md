@@ -6,9 +6,8 @@ Krypto-Basics und wie man es NICHT macht
 ---
 
 Auszug aus Präsentation von Linus Neumann ( Sprecher CCC) zur 
-Austellungseröffnung „Wahlcomputer“ im Heinz-Nixdorf-Forum 2017
+Austellungseröffnung „Wahlcomputer“ im Heinz-Nixdorf-Forum 2017[Heinz-Nixdorf-Forum 2017](http://www.linus-neumann.de/wp-content/uploads/2017/09/Mit-Papier-und-Bleistift-zur-sicheren-Wahl.mp4)
 
-http://www.linus-neumann.de/wp-content/uploads/2017/09/Mit-Papier-und-Bleistift-zur-sicheren-Wahl.mp4
 
 --- 
 
