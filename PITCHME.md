@@ -14,7 +14,7 @@ Austellungseröffnung „Wahlcomputer“ im Heinz-Nixdorf-Forum 2017](http://www
 Wahl muss: 
 
 * geheim, frei und gleich
-* tansparentes Verfahren und überprüfbare Resultate
+* transparentes Verfahren und überprüfbare Resultate
 * sicher gegen Manipulation 
 * vertrauenswürdig
 
@@ -23,9 +23,9 @@ Wahl muss:
 Computer bei Wahlen 
 
 * 1990er Jahre; Forschungsprojekte
-* 1999: Erster einsatz Nedap-Wahlcomputer 
+* 1999: Erster Einsatz Nedap-Wahlcomputer 
 * 2002: Bundesinnenminister kündigt e-Voting für 2006 an 
-* bis 2008 ca. 15 Millionen Stimen an Nedap-Wahlcomputern abgegeben 
+* bis 2008 ca. 15 Millionen Stimmen an Nedap-Wahlcomputern abgegeben 
 
 ---
 
@@ -53,7 +53,7 @@ Verfassungsbeschwerde
 Urteil 
 
 * Einsatz von Wahlcomputern bei Bundestagswahl 2005 war verfassungswidrig
-* Wahl soll nachvollziehbar & begreifbar sein, nicht nur für Techniker, sonder 
+* Wahl soll nachvollziehbar & begreifbar sein, nicht nur für Techniker, sondern 
   für jeden Bürger
 
 
@@ -222,7 +222,7 @@ https://ccc.de/system/uploads/230/original/PC-Wahl_Bericht_CCC.pdf
 
 ---
 
-### Extraktion nicht öffentlicher Datein 
+### Extraktion nicht öffentlicher Dateien 
 
 ---
 
@@ -275,21 +275,21 @@ https://www.wahlinfo.de/test/test.zip
 
 
 * Entschlüsselungsroutine in SmartEditor.exe
-* Klartext-Zugangsdaten in entschlüsselten zip
+* Klartext-Zugangsdaten in entschlüsseltem zip
 * Benutzername: p8346897
   Passwort: ftppcw7
 
 ---
 
-CCC informiert PC-Wahl team
+CCC informiert PC-Wahl Team
 
 ---
 
 Durchgeführte Aktionen: 
 
 * Dateien mit Endung php werden nicht mehr ausgeführt
-* php-scripte nach wie vor auf Server
-* ftp-Zugangsdaten wurden geändert 
+* PHP-Skripte nach wie vor auf Server
+* FTP-Zugangsdaten wurden geändert 
 
 weitere Überprüfungen dadurch nicht mehr möglich. 
 
@@ -407,8 +407,8 @@ Hashing Algorithmen
 
 ---
 
-* MD5 (dont use!)
-* SHA-1 (dont use!)
+* MD5 (don't use!)
+* SHA-1 (don't use!)
 * SHA-2, SHA3 (<-)
 
 ---
@@ -449,7 +449,7 @@ certificate authority
 
 ---
 
-Aus dem ftp-modul extrahierbar: 
+Aus dem FTP-Modul extrahierbar: 
 
 * Schlüssel
 * Ent- und "Verschlüsselungs"-Algorithmus
@@ -479,7 +479,7 @@ Erster Behebungsversuch: MD5-Prüfsummen (31. August 2017)
 
 ---
 
-Im zip-archiv befindet sich jetzt eine MD5-Prüfsummen-Datei
+Im ZIP-Archiv befindet sich jetzt eine MD5-Prüfsummen-Datei
 
 ---
 
@@ -506,7 +506,7 @@ CCC empfiehlt:
 
 * verwendung signierter Microsoft-Installer (MSI)
 * Einsatz eines eigens erstellten Hersteller Zertifikats 
-* Standart-Verfahren
+* Standard-Verfahren
 
 ---
 
@@ -567,7 +567,7 @@ GPG-Passphrase wird mangelhaft „verschlüsselt“ gespeichert
 ---
 
 * GPG-Passphrase wird in datei LOG000.INI gespeichert 
-* eigens entwickelte "„Verschlüsselungsroutine“" wird verwendet
+* eigens entwickelte „Verschlüsselungsroutine“ wird verwendet
 
 ---
 
@@ -582,7 +582,7 @@ GPG-Passphrase wird mangelhaft „verschlüsselt“ gespeichert
 
 CCC empfiehlt: 
 
-* Einrichtung von mehr als 10 000 Wahllokalen mit Schlüsseln unpraktikabel
+* Einrichtung von mehr als 10.000 Wahllokalen mit Schlüsseln unpraktikabel
 * Einsatz einer PKI 
 * Einsatz von Smart-Cards (z.B. USB-Stick)
 
