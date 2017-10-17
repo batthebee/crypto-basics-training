@@ -153,8 +153,6 @@ Bundestagswahlen, Europawahlen und Volksabstimmungen eingesetzt.“
 
 ![Beißer](evil/Beißer.jpg "Rule 2")
 
----
-
 ** Rule 2: Security by Obscurity is evil! **
 
 ---
@@ -216,8 +214,6 @@ https://ccc.de/system/uploads/230/original/PC-Wahl_Bericht_CCC.pdf
 
 ![cobra-kai](evil/cobra-kai.jpeg "Rule 3")
 
----
-
 ** Rule 3: Not knowing your infrastructure is evil! ** 
 
 ---
@@ -251,8 +247,6 @@ weitere php-scripte
 ---
 
 ![darth-vader](evil/darth-vader.jpg "Rule 4")
-
----
 
 ** Rule 4: Testcode in production is evil! ** 
 
@@ -330,8 +324,6 @@ IP: 172.22.5.30
 ---
 
 ![blob](evil/The-Blob.jpg "Rule 5")
-
----
 
 ** Rule 5: Identify and Protect your sensitive Data, otherwise you are evil! **
 
@@ -512,8 +504,6 @@ CCC empfiehlt:
 
 ![rabbit](evil/rabbit.jpg "Rule 7")
 
----
-
 ** Rule 7: "Handmade" crypto is evil! Use standart tooling. **
 
 ---
@@ -573,10 +563,7 @@ GPG-Passphrase wird mangelhaft „verschlüsselt“ gespeichert
 
 ![trump](evil/donald-trump.jpg "Rule 8")
 
----
-
 ** Rule 8:  using "Handmade" crypto-alogrithm is very, very evil!**
-
 
 ---
 
