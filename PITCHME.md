@@ -13,10 +13,10 @@ Austellungseröffnung „Wahlcomputer“ im Heinz-Nixdorf-Forum 2017](http://www
 
 Wahl muss: 
 
-* geheim, frei und gleich
-* transparentes Verfahren und überprüfbare Resultate
-* sicher gegen Manipulation 
-* vertrauenswürdig
+* Geheim, frei und gleich
+* Transparentes Verfahren und überprüfbare Resultate
+* Sicher gegen Manipulation 
+* Vertrauenswürdig
 
 --- 
 
@@ -39,11 +39,11 @@ Computer bei Wahlen
 
 Verfassungsbeschwerde 
 
-* gegen Bundestagswahl 2005 
-* keine Möglichkeit zur Prüfung durch den Wähler
-* keine Offenlegung der Systemunterlagen 
+* Gegen Bundestagswahl 2005 
+* Keine Möglichkeit zur Prüfung durch den Wähler
+* Keine Offenlegung der Systemunterlagen 
 * Zweifel an der Sicherheit des Wahlsystems
-* kein Bedarf: sicheres, akzeptiertes Wahlverfahren vorhanden 
+* Kein Bedarf: sicheres, akzeptiertes Wahlverfahren vorhanden 
 
 ---
 
@@ -135,7 +135,7 @@ Bundestagswahlen, Europawahlen und Volksabstimmungen eingesetzt.“
 
 ---
 
-### Theorie 1
+# Theorie 1
 
 ---
 
@@ -148,7 +148,7 @@ Bundestagswahlen, Europawahlen und Volksabstimmungen eingesetzt.“
 
 ---
 
-![chain](data/chain.png "chain")
+![chain](data/key-concepts.png "chain")
 
 ---
 
@@ -269,12 +269,12 @@ CCC informiert ekom21 über weitere CPR-Dateien
 
 geplante Aktionen: 
 
-* statt FTP soll SFTP zum Einsatz kommen (Entschlüsselung immer noch möglich)
-* statt einem globalen Benutzer, ein Benutzer pro Wahlkreis
+* Statt FTP soll SFTP zum Einsatz kommen (Entschlüsselung immer noch möglich)
+* Statt einem globalen Benutzer, ein Benutzer pro Wahlkreis
 
 ---
 
-*6. September 2017*
+durchgeführte Aktionen: 
 
 * Umzug von http://wahlinfo.ekom21.de nach Umzug von https://wahlinfo.ekom21.de/wahlen
 * FTP-Modul wird wieder öffentlich Bereitgestellt 
@@ -295,7 +295,7 @@ nicht jedoch auf der Geheimhaltung des Verschlüsselungsalgorithmus beruhen soll
 
 ---
 
-# Theorie
+# Theorie 2
 
 ---
 
@@ -387,7 +387,7 @@ nicht jedoch auf der Geheimhaltung des Verschlüsselungsalgorithmus beruhen soll
 ---
 
 * 128, 192, 256 Bit
-* hohe Effizienz bei Implementierung in Verschlüsselungssoftware oder –hardware
+* Hohe Effizienz bei Implementierung in Verschlüsselungssoftware oder –hardware
 * Sicherheit gegen bekannte kryptografische Angriffe
 
 ---
@@ -454,42 +454,26 @@ nicht jedoch auf der Geheimhaltung des Verschlüsselungsalgorithmus beruhen soll
 
 ## Integrität der Software
 
-keine Prüfung der Authentizität 
+Keine Prüfung der Authentizität bei automatischen Update.
 
 ---
 
-Erster Behebungsversuch: MD5-Prüfsummen (31. August 2017)
-
----
+### MD5-Prüfsummen (24 Tage vor der Wahl)
 
 Im ZIP-Archiv befindet sich jetzt eine MD5-Prüfsummen-Datei
 
 ---
 
-Zweiter Behebungsversuch: „Digitale Signatur“ (5. September 2017)
-
----
+### Digitale Signatur (21 Tage vor der Wahl)
 
 studio.exe jetzt signiert mit Comodo-Zertifikat des Herstellers regio iT, wird aber nicht überprüft. 
 
 ---
 
-Dritter Behebungsversuch: „Digital signierte Installationspakete“ (13. September 2017)
-
----
+### Digital signierte Installationspakete (13. September 2017)
 
 * Software jetzt eingepackt in "Hello world"-Applikation
-* Nutzer muss manuell den Fingerprint prüfen
-* Sonst bleibt alles gleich
-* Austausch der Applikation möglich ( ccc <24h )  
-
----
-
-CCC empfiehlt: 
-
-* verwendung signierter Microsoft-Installer (MSI)
-* Einsatz eines eigens erstellten Hersteller Zertifikats 
-* Standard-Verfahren
+* Die Prüfung der Signatur wird vom Nutzer über Appilkation durchgeführt
 
 ---
 
@@ -501,26 +485,15 @@ CCC empfiehlt:
 
 ## Authentizität übertragener Daten
 
----
-
-* keine kryptografische Signatur
-* Manipulationen möglich
-
-in Kombination mit vorherigen Themen "suboptimal" ;) 
-
+Keine kryptografische Signatur.
 
 ---
 
-Erster Behebungsversuch: GPG-Signaturen
+### GPG-Signaturen
 
----
-
-GPG-Passphrase wird über die Kommandozeile übergeben
-
----
-
-* externes Tool Gpg4win
-* separat installiert
+* GPG-Passphrase wird über die Kommandozeile übergeben
+* Externes Tool Gpg4win
+* Separat installiert
 
 ---
 
@@ -536,8 +509,6 @@ GPG-Passphrase wird über die Kommandozeile übergeben
 
 GPG-Passphrase wird unverschlüsselt gespeichert
 
----
-
 * GPG Schlüssel wird in pipe.txt geschrieben
 * PC-Wahlserver hat eigenen FTP-Server, der Zugriff auf diese Datei gewährt
 
@@ -545,10 +516,8 @@ GPG-Passphrase wird unverschlüsselt gespeichert
 
 GPG-Passphrase wird mangelhaft „verschlüsselt“ gespeichert
 
----
-
 * GPG-Passphrase wird in datei LOG000.INI gespeichert 
-* eigens entwickelte „Verschlüsselungsroutine“ wird verwendet
+* Eigens entwickelte „Verschlüsselungsroutine“ wird verwendet
 
 ---
 
@@ -558,184 +527,31 @@ GPG-Passphrase wird mangelhaft „verschlüsselt“ gespeichert
 
 ---
 
-CCC empfiehlt: 
-
-* Einrichtung von mehr als 10.000 Wahllokalen mit Schlüsseln unpraktikabel
-* Einsatz einer PKI 
-* Einsatz von Smart-Cards (z.B. USB-Stick)
-
----
-
 CCC Hacking Tools:
 
 https://github.com/devio/Walruss
 
----
-
-# Wie gehts jetzt "richtig"?
-
-Spende des CCCs: 
+CCC Spende: 
 
 https://github.com/devio/Walruss/tree/master/pcw_rsa_donation
 
 ---
 
-## Daten signieren
-
-```csharp
-
-using System.Security;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-...
-
-public static string Sign(String xml_private_key, String input_file)
-{
-    // Detached signature is located at original-filename.ext.sig
-    String signature_file = input_file + ".sig";
-    byte[] signature;
-
-    // Use RSACng because we want to use RSA Probabilistic Signature Scheme (PSS)
-    using (var rsa = new RSACng())
-    {
-        rsa.FromXmlString(xml_private_key);
-
-        try
-        {
-            // Data file to be signed
-            Stream input_stream = File.OpenRead(input_file);
-
-            // Sign data with private RSA key, using SHA512 and RSA-PSS
-            signature = rsa.SignData(input_stream, HashAlgorithmName.SHA512, RSASignaturePadding.Pss);
-
-            // Write signature to detached .sig file.
-            File.WriteAllText(signature_file, Convert.ToBase64String(signature));
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("[e] Sign error: " + e.Message);
-            return null;
-        }
-    }
-    // Return signature data base64 encoded
-    return Convert.ToBase64String(signature);
-}
-
-
-```
+# Wie gehts jetzt "richtig"?
 
 ---
 
+CCC empfiehlt: 
 
-## Signatur überprüfen
-
-
-```csharp
-
-public static bool Verify(String xml_public_key, String input_file)
-{
-    // Detached signature is located at original-filename.ext.sig
-    String signature_file = input_file + ".sig";
-
-    Boolean success = false;
-
-    // Use RSACng because we want to use RSA Probabilistic Signature Scheme (PSS)
-    using (var rsa = new RSACng())
-    {
-        rsa.FromXmlString(xml_public_key);
-
-        try
-        {
-            // Convert base64 encoded signature to byte-array
-            byte[] signature = Convert.FromBase64String(File.ReadAllText(signature_file));
-
-            // Data file that has been signed
-            Stream input_stream = File.OpenRead(input_file);
-
-            // Verify data with public RSA key, using SHA512 and RSA-PSS
-            success = rsa.VerifyData(input_stream, signature, HashAlgorithmName.SHA512, RSASignaturePadding.Pss);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("[e] Verify error: " + e.Message);
-            return false;
-        }
-    }
-    return success;
-}
-
-```
+* Einrichtung von mehr als 10.000 Wahllokalen mit Schlüsseln unpraktikabel
+* Einsatz einer PKI 
+* Einsatz von Smart-Cards (z.B. USB-Stick)
+* Verwendung signierter Microsoft-Installer (MSI)
+* Einsatz eines eigens erstellten Hersteller Zertifikats 
+* Standard-Verfahren
 
 ---
 
-## Validieren der Installationsdatei
-
-```csharp
-
-using System.Security;
-
-...
-
-static void Main(string[] args)
-{
-    if (args.Length < 1) {
-        usage();
-        return;
-    }
-
-    // This code must be used/implemented on vendor side when deploying update data packages
-    if (args[0].Equals("-sign"))
-    {
-        String res = null;
-
-        if (args.Length < 3)
-        {
-            usage();
-            return;
-        }
-
-        // Read XML encoded RSA private key from file (args1) and pass path 
-        //    to input data (args2)
-        res = Walruss.Updates.Data.Sign(File.ReadAllText(args[1]), args[2]);
-
-        Console.WriteLine("[d] RSA Sign - Result: " + res);
-    }
-    // This code must be used/implemented in the updater program.
-    else if (args[0].Equals("-verify"))
-    {
-        Boolean res = false;
-
-        if (args.Length < 2)
-        {
-            usage();
-            return;
-        }
-
-        // <blink>Put this in programmaktualisierung10.exe</blink>
-        res = Walruss.Updates.Data.Verify(VENDOR_RSA_PUBLIC_KEY, args[1]);
-
-        Console.WriteLine("[d] RSA Verify - Result: " + res);
-
-        if (res == true)
-        {
-            // Signature OK
-            // Proceed ...
-        }
-        else
-        {
-            // Signature not OK
-            // Terminate Program
-        }
-    }
-    else
-    {
-        usage();
-        return;
-    }
-}
-```
-@[2]
-@[24-28]
-@[40-56]
+![done-right](data/done-right.png "done right")
 
 ---
