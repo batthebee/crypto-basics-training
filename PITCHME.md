@@ -35,29 +35,21 @@ Computer bei Wahlen
 
 ![Nedap](wahlcomputer-schachcomputer.png "Jetzt ist er ein Schachcomputer ;)")
 
-
 ---
 
 Verfassungsbeschwerde 
 
 * gegen Bundestagswahl 2005 
-* mangelnde Transparenz 
-    * keine Möglichkeit zur Prüfung durch den Wähler
-    * keine Offenlegung der Systemunterlagen 
-
-* Zweifel an der Sicherheit des Wahlsystems, insbesondere Wahlgeheimnis und Manipulationsfestigkeit 
+* keine Möglichkeit zur Prüfung durch den Wähler
+* keine Offenlegung der Systemunterlagen 
+* Zweifel an der Sicherheit des Wahlsystems
 * kein Bedarf: sicheres, akzeptiertes Wahlverfahren vorhanden 
 
 ---
 
-Urteil 
+**Urteil** 
 
-* Einsatz von Wahlcomputern bei Bundestagswahl 2005 war verfassungswidrig
-* Wahl soll nachvollziehbar & begreifbar sein, nicht nur für Techniker, sondern 
-  für jeden Bürger
-
-
----
+Einsatz war verfassungswidrig
 
 > Beim Einsatz elektronischer Wahlgeräte müssen die wesentlichen Schritte der Wahlbehandlung und Ergebnisermittlung von Bürgern zuverlässig und ohne Sachkenntnis überprüft werden können.
 
@@ -65,9 +57,7 @@ Urteil
 
 ![dr-evil](evil/dr-evil.jpeg "Rule 1")
 
----
-
-** Rule 1: Computers are evil! **
+**Rule 1: Computers are evil!**
 
 ---
 
@@ -77,10 +67,10 @@ Software zur Organisation, Wahlerfassung und -auswertung von Wahlen.
 
 ---
 
-Alternative, ebenfalls in Deutschland eingesetzte Software-Produkte sind:
+Alternativen:
 
 * IVU.elect
-* Votemanager ( heute selbes Unternehmen wie PC-Wahl)
+* Votemanager
 
 --- 
 
@@ -93,8 +83,6 @@ getested im Januar 2017 von [Sijmen Ruwhof](https://sijmen.ruwhof.net/weblog/116
 How to hack the upcoming Dutch elections – and how hackers could have hacked all Dutch elections since 2009
 
 ---
-
-### Overview of all identified risk
 
 ```
 1. Critical: Optional final paper audit.
@@ -123,14 +111,20 @@ How to hack the upcoming Dutch elections – and how hackers could have hacked a
 24. High: Most sensitive operations in voting software have least SHA1 protection.
 25. Etc. etc.
 ```
-@[4-9]
+@[4]
+@[6-9]
+@[13-14]
 @[22-24]
 @[1]
-
+@[25]
 
 --- 
 
-# Bundestagswahl 24. September 2017
+# PC-Wahl 
+
+* Bundestagswahl 24. September 2017
+* 32 000 000 Stimmen
+* 30 Jahre Entwicklung
  
 ---
 
@@ -141,137 +135,104 @@ Bundestagswahlen, Europawahlen und Volksabstimmungen eingesetzt.“
 
 ---
 
-![chain](data/chain.jpg "chain")
+### Theorie 1
 
 ---
 
-## Security by Obscurity 
+**Key Concepts**
 
+* Confidentiality (Vertraulichkeit)
+* Integrity (Unversehrtheit)
+* Availability (Verfügbarkeit)
+* Non-repudiation (Nicht-Abstreitbarkeit)
 
 ---
 
+![chain](data/chain.png "chain")
+
+---
+
+**13 Tage bis zur Wahl**
+
+Erstveröffentlichung PC-Wahl-Bericht 
+
+[Thorsten Schröder, Linus Neumann, Martin Tschirsich](https://ccc.de/system/uploads/230/original/PC-Wahl_Bericht_CCC.pdf)
+
+---
 
 ![Beißer](evil/Beißer.jpg "Rule 2")
 
-** Rule 2: Security by Obscurity is evil! **
+**Rule 2: Security by Obscurity is evil!**
 
 ---
 
-07.September 2017 
-
-Erstveröffentlichung PC-Wahl-Bericht durch CCC
-
-https://ccc.de/system/uploads/230/original/PC-Wahl_Bericht_CCC.pdf
+# Infrastruktur
 
 ---
 
-## Upload modifizierter Wahlergebnisse
-
-
----
-
-* internes VPN Netzwerk
-* Upload auf FTP-Server
-* FTP-Zugang Passwort-geschützt 
-
+![infrastruktur](data/infrastruktur.png "infrastruktur")
 
 ---
 
-## Manipulation der Software
-
-
----
-
-* Automatische Update Funktion
-* Update-Funktion auf allen Systemen gleich
-
----
-
-## Upload modifizierter Ergebnisse
-
-
-* Übermittlung per XML
-* innerhalb von zwei Minuten automatisiert veröffentlicht
-
----
-
-# Schwachstellen
-
----
-
-## Server wahlauswertung.de des Herstellers von PC-Wahl
-
-
----
-
-### Hosting auf Fremdsystem
-
-
-* 1&1 Shared Host
-* 5.507 weitere Kunden
+![pcwahl-ftp1](data/pcwahl-ftp1.png "pcwahl-ftp1")
 
 ---
 
 ![cobra-kai](evil/cobra-kai.jpeg "Rule 3")
 
-** Rule 3: Not knowing your infrastructure is evil! ** 
+**Rule 3: Know your infrastructure, otherwise you could meet evil people!** 
 
 ---
 
-### Extraktion nicht öffentlicher Dateien 
+![pcwahl-ftp2](data/pcwahl-ftp2.png "pcwahl-ftp2")
 
 ---
 
-http://www.wahlauswertung.de/phptest/pobs.php
-
-* ausführbar 
-* Parameter: Quell- und Zielverzeichnis 
-* beliebig ausführbar
+![pcwahl-ftp3](data/pcwahl-ftp3.png "pcwahl-ftp3")
 
 ---
 
-### Schreiben beliebiger Dateien in das Webroot
+![pcwahl-ftp4](data/pcwahl-ftp4.png "pcwahl-ftp4")
 
 ---
 
-weitere php-scripte 
-
-* ausführbar 
-* upload-funktion 
-* passwort-geschützt: 
-  * user: gast, password: test
-  * user: test01, password: test01
-  * user: test02, password: test02
-  * user: gast, password: test
+![pcwahl-ftp5](data/pcwahl-ftp5.png "pcwahl-ftp5")
 
 ---
 
 ![darth-vader](evil/darth-vader.jpg "Rule 4")
 
-** Rule 4: Testcode in production is evil! ** 
+**Rule 4: Testcode in production is evil!**
 
 ---
 
-### Mangelhaft gesicherter WebDAV-Zugang
+![ekom21-vpn1](data/ekom21-vpn1.png "ekom21-vpn1")
 
 ---
 
-* www-Benutzer kann Zugangsdaten des Webroots erreichen
-* kompletter Zugang zum System 
+![ekom21-vpn2](data/ekom21-vpn2.png "ekom21-vpn2")
 
 ---
 
-### Mangelhaft gesicherter FTP-Zugang
+![ekom21-vpn3](data/ekom21-vpn3.png "ekom21-vpn3")
 
 ---
 
-https://www.wahlinfo.de/test/test.zip
+![ekom21-ftp1](data/ekom21-ftp1.png "ekom21-ftp1")
 
+---
 
-* Entschlüsselungsroutine in SmartEditor.exe
-* Klartext-Zugangsdaten in entschlüsseltem zip
-* Benutzername: p8346897
-  Passwort: ftppcw7
+![ekom21-ftp2](data/ekom21-ftp2.png "ekom21-ftp2")
+
+---
+
+![ekom21-ftp3](data/ekom21-ftp3.png "ekom21-ftp3")
+
+---
+
+![blob](evil/The-Blob.jpg "Rule 5")
+
+**Rule 5: Identify and Protect your sensitive Data, otherwise you are evil!**
 
 ---
 
@@ -284,48 +245,10 @@ Durchgeführte Aktionen:
 * Dateien mit Endung php werden nicht mehr ausgeführt
 * PHP-Skripte nach wie vor auf Server
 * FTP-Zugangsdaten wurden geändert 
+* CPR-Dateien nur noch nach Eingabe des Passworts möglich 
+* AES-Option besteht und "soll" verwendet werden. 
 
-weitere Überprüfungen dadurch nicht mehr möglich. 
-
----
-
-## FTP-Server des IT-Dienstleisters ekom21
-
-Zum Austausch von Wahlergebnissen
-
----
-
-# Vpn-Zugang zum Intranet
-
-
-* Zugriff vieler, auch privater Firmen
-* Zugangsdaten wie z.B. Nutzer: test, Passwort: test
-
----
-
-# Unzureichend gesicherter FTP-Server
-
-
-* Zugriff aller Wahlleiter 
-* Veröffentlichung der Passwörter auf öffentlicher Website
-  ( über FTP Modul per CPR-Dateien )
-* Schreibzugriff auf Verzeichnisse aller Wahlen
-* Genau so schon eingesetzt BTW 2013, LTW 2013
-
----
-
-* Überall selbes Passwort
-* Entschlüsselung durch pc-wahl-software
-
-IP: 172.22.5.30
-* Benutzername: wahlen
-* Passwort: wahlen,ftp
-
----
-
-![blob](evil/The-Blob.jpg "Rule 5")
-
-** Rule 5: Identify and Protect your sensitive Data, otherwise you are evil! **
+Ab hier keine weiteren Überprüfungen durch ccc möglich.  
 
 ---
 
@@ -350,6 +273,7 @@ geplante Aktionen:
 * statt einem globalen Benutzer, ein Benutzer pro Wahlkreis
 
 ---
+
 *6. September 2017*
 
 * Umzug von http://wahlinfo.ekom21.de nach Umzug von https://wahlinfo.ekom21.de/wahlen
@@ -359,8 +283,6 @@ geplante Aktionen:
 
 # Kerckhoffs’ Prinzip
 
----
-
 Bereits 1883 postulierte Auguste Kerckhoffs den Verschlüsselungsgrundsatz, dass die
 Sicherheit eines Verschlüsselungsverfahrens einzig auf der Geheimhaltung des Schlüssels,
 nicht jedoch auf der Geheimhaltung des Verschlüsselungsalgorithmus beruhen soll.
@@ -369,9 +291,7 @@ nicht jedoch auf der Geheimhaltung des Verschlüsselungsalgorithmus beruhen soll
 
 ![joffrey](evil/joffrey.jpg "Rule 6")
 
----
-
-** Rule 6: Hiding your crypto is evil! **
+**Rule 6: Hiding your crypto is evil!**
 
 ---
 
@@ -379,85 +299,156 @@ nicht jedoch auf der Geheimhaltung des Verschlüsselungsalgorithmus beruhen soll
 
 ---
 
-Symetrische Verschlüsselung
+## Hashes und MACs
+
+---
+
+**Salt?**
+
+---
+
+**MD5** 
+
+---
+
+* 128 bit 
+* gebrochen
+
+--- 
+
+**SHA-1**
+
+---
+
+* Feb 2005: 2^80 auf 2^69 
+* Aug 2005: 2^63 
+* Aug 2006: gefälschten Nachricht (derzeit bis zu 25 %)
+* ...
+* Feb 2017: erste Kollision
+
+---
+
+**SHA-2** 
+
+---
+
+* SHA-224, SHA-256, SHA-384, SHA-512
+* gilt als sicher
+
+---
+
+**use SHA-2 (SHA-256) whenever possible**
+
+---
+
+**use procedures like PBKDF2, bcrypt or scrypt for passwords**
+
+---
+
+## Symetrische Verschlüsselung
+
+---
 
 ![sym](data/symetrisch.png)
 
 --- 
 
-* 3DES
-* AES
-* RC5
-* Blowfish
-* ...
+**RC4**
 
 ---
 
-Hashing Algorithmen
-
-![hash](data/hash.png)
-
----
-
-* MD5 (don't use!)
-* SHA-1 (don't use!)
-* SHA-2, SHA3 (<-)
+* Weit verbreitet
+* gebrochen.
 
 ---
 
-Asymetrische Verschlüsselung
+**DES**
 
-![asym](data/asymetrisch.png)
+---
+
+* Weit verbreitet
+* 56 Bit 
+* Nachfolger: 3DES (schlechte Performance)
+
+---
+
+**Blowfish**
+
+---
+
+* 32-448 Bit 
+* Schnell
+* Langsame Schlüsselerzeugung
+
+---
+
+**AES**
+
+---
+
+* 128, 192, 256 Bit
+* hohe Effizienz bei Implementierung in Verschlüsselungssoftware oder –hardware
+* Sicherheit gegen bekannte kryptografische Angriffe
+
+---
+
+**use AES (AES with 256bit) whenever possible**
+
+---
+
+## Asymetrische Verschlüsselung
+
+---
+
+![gen](data/schluesselgenerierung.png)
+
+---
+
+![aenc](data/verschlüsselung.png)
+
+---
+
+![aenc](data/signierung.png)
 
 ---
 
 * Diffie-Hellman
 * RSA
 * ElGamal
-* PGP
+* ECC-Verfahren (Curve25519 ...)
 * ...
 
 ---
 
-Digitale Signaturen
+![asym](data/speed-tls.png)
+
+---
+
+**use ECC (Curve25519, ...) or RSA + DH (>2048) whenever possible**
+
+---
+
+## Digitale Signaturen
+
+---
 
 ![digsig](data/digitale-signatur.png)
 
 ---
 
-chain of trust
-
-![hardware](data/hardware.jpg)
+## chain of trust
 
 ---
 
-certificate authority
+### certificate authority
+
+---
 
 ![ca](data/ca.jpg)
 
 ---
 
-## Unsicher gespeicherte und übertragene Passwörter
-
----
-
-Aus dem FTP-Modul extrahierbar: 
-
-* Schlüssel
-* Ent- und "Verschlüsselungs"-Algorithmus
-
----
-
-CCC informiert Entwickler von PC-Wahl
-
----
-
-Durchgeführte Aktionen: 
-
-* CPR-Dateien nur noch nach Eingabe des Passworts möglich 
-* AES-Option besteht und "soll" verwendet werden. 
-
-Ab hier keine weiteren Überprüfungen durch ccc möglich.  
+### secure boot
 
 ---
 
@@ -504,7 +495,7 @@ CCC empfiehlt:
 
 ![rabbit](evil/rabbit.jpg "Rule 7")
 
-** Rule 7: "Handmade" crypto is evil! Use standart tooling. **
+**Rule 7: roll your own crypto is evil! Use standard tooling.**
 
 ---
 
@@ -563,7 +554,7 @@ GPG-Passphrase wird mangelhaft „verschlüsselt“ gespeichert
 
 ![trump](evil/donald-trump.jpg "Rule 8")
 
-** Rule 8:  using "Handmade" crypto-alogrithm is very, very evil!**
+**Rule 8:  using "Handmade" crypto-alogrithm is very, very evil!**
 
 ---
 
@@ -589,9 +580,7 @@ https://github.com/devio/Walruss/tree/master/pcw_rsa_donation
 
 ---
 
-## Daten signieren und überprüfen
-
----
+## Daten signieren
 
 ```csharp
 
@@ -638,6 +627,9 @@ public static string Sign(String xml_private_key, String input_file)
 ---
 
 
+## Signatur überprüfen
+
+
 ```csharp
 
 public static bool Verify(String xml_public_key, String input_file)
@@ -677,8 +669,6 @@ public static bool Verify(String xml_public_key, String input_file)
 ---
 
 ## Validieren der Installationsdatei
-
----
 
 ```csharp
 
